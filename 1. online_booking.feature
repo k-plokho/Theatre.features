@@ -3,7 +3,7 @@ Feature: Online booking
     As a customer
     I want have an opportunity to buy tickets online
     
-    Scenario: Buying tickets for the show online (from start to finish)
+    Scenario: Buying tickets for the show online (general)
       Given the main page of the website is opened
       When I click on the button 'Purchase tickets'
       Then the page 'Tickets' opens
