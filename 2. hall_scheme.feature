@@ -29,7 +29,3 @@ Feature: Hall scheme
     When there's no activity from me on the page for 3 minutes
     Then the seat changes to its previous color for all the users
     And the button 'Add to cart' becomes inactive     
-    
-
- 
- 
