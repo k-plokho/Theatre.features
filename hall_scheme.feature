@@ -4,14 +4,14 @@ Feature: Hall scheme
   I want hall scheme in the page 'Seat Selection'
   
   Scenario: Selecting seat
-    Given the page 'Seat Selection' opens
+    Given the page 'Seat Selection' is opened
     When I choose the available seat on the scheme by clicking on it
     Then the color of the seat becomes red
     And for other users the color of the seat becomes light grey
     And the button 'Add to cart' becomes active
      
   Scenario: Unselecting the previously selected seat by the user
-    Given the page 'Seat Selection' opens
+    Given the page 'Seat Selection' is opened
     When I choose the available seat on the scheme by clicking on it
     Then the color of the seat becomes red
     And for other users the color of the seat becomes light grey
@@ -21,7 +21,7 @@ Feature: Hall scheme
     And the button 'Add to cart' becomes inactive
       
   Scenario: Unselecting the previously selected seat automatically if there's no user activity
-    Given the page 'Seat Selection' opens
+    Given the page 'Seat Selection' is opened
     When I choose the available seat on the scheme by clicking on it
     Then the color of the seat becomes red
     And for other users the color of the seat becomes light grey
