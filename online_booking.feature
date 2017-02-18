@@ -18,8 +18,10 @@ Feature: Online booking
       And for other users the color of the seat becomes light grey
       When I click the button 'Add to cart'
       Then the seat I selected appears in the Cart as an item
-      And I click the button 'Next'
-      And the page 'Order Placing' opens
+      And the timer appears counting down 15 minutes
+      When I click the button 'Next'
+      Then the page 'Order Placing' opens
+      And the timer appears counting down 5 minutes
       When I fill the form with the following valid data:
         | Name  | Tony Stark                |
         | email | user.chetheatre@gmail.com |      
