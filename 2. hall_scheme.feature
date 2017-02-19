@@ -5,14 +5,14 @@ Feature: Hall scheme
   
   Scenario: Selecting seat
     Given the page 'Seat Selection' is opened
-    When I choose the available seat on the scheme by clicking on it
+    When I select the available seat on the scheme by clicking on it
     Then the color of the seat becomes red
     And for other users the color of the seat becomes light grey
     And the button 'Add to cart' becomes active
      
   Scenario: Unselecting the previously selected seat by the user
     Given the page 'Seat Selection' is opened
-    When I choose the available seat on the scheme by clicking on it
+    When I select the available seat on the scheme by clicking on it
     Then the color of the seat becomes red
     And for other users the color of the seat becomes light grey
     And the button 'Add to cart' becomes active
@@ -22,7 +22,7 @@ Feature: Hall scheme
       
   Scenario: Unselecting the previously selected seat automatically if there's no user activity
     Given the page 'Seat Selection' is opened
-    When I choose the available seat on the scheme by clicking on it
+    When I select the available seat on the scheme by clicking on it
     Then the color of the seat becomes red
     And for other users the color of the seat becomes light grey
     And the button 'Add to cart' becomes active
