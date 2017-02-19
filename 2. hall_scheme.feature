@@ -1,5 +1,5 @@
 Feature: Hall scheme
-  In order to select the seats for the show tickets of which i want to buy
+  In order to select the seats for the show tickets of which I want to buy
   As a customer
   I want hall scheme in the page 'Seat Selection'
   
