@@ -46,3 +46,25 @@ Feature: The cart
     And the total sum to pay for the order becomes 0 hrn
     And the corresponding seat on the scheme becomes available to select
     And the button 'Next' becomes inactive
+    
+  Scenario: Canceling the order
+    Given the page 'Seat Selection' is opened
+    And the cart already contains two items:
+      | item       | price   |
+      | 1st ticket | 80 hrn  |
+      | 2nd ticket | 150 hrn |
+    And the total sum to pay for the order is 230 hrn
+    When I click on button 'Cancel' 
+    Then the popup with the message is displayed asking me do I really want to cancel the order
+    When I click 'YES
+    Then the items disappear from the cart
+    And the total sum to pay for the order becomes 0 hrn
+    And the corresponding seats on the scheme becomes available to select
+    And the button 'Next' becomes inactive
+  
+  Scenario: Going back to the page of the show with the item added to the card
+    Given the page 'Seat Selection' is opened
+    And the cart already contains one item
+    When I click the button 'Back to the page of the show'
+    Then the page of the show opens
+    And the cart still contains that item
