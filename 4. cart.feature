@@ -11,6 +11,7 @@ Feature: The cart
     And the button 'Add to cart' becomes active
     When I click on the button 'Add to cart'
     Then the seat I selected is appeared as the item in the cart
+    And the button 'Next' becomes active
     And the total sum to pay for the order equals the price of the seat added to the cart
 
   Scenario: Adding second item to the cart
@@ -24,7 +25,6 @@ Feature: The cart
     Then the seat I selected is appeared as the item in the cart
     And the total sum to pay for the order is 230 hrn
 
-
   Scenario: Deleting one item from the cart
     Given the page 'Seat Selection' is opened
     And the cart already contains two items:
@@ -36,3 +36,13 @@ Feature: The cart
     Then this item disappears from the cart
     And the total sum to pay for the order becomes 80 hrn
     And the corresponding seat on the scheme becomes available to select
+    
+  Scenario: Deleting all items from the cart
+    Given the page 'Seat Selection' is opened
+    And the cart already contains one item for 80 hrn
+    And the total sum to pay for the order is 80 hrn
+    When I click on button 'Delete' next to the item
+    Then this item disappears from the cart
+    And the total sum to pay for the order becomes 0 hrn
+    And the corresponding seat on the scheme becomes available to select
+    And the button 'Next' becomes inactive
