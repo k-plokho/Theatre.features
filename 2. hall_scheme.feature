@@ -39,3 +39,18 @@ Feature: Hall scheme
     And the previous cloud disappears
     When I move the mouse out of hall scheme zone
     Then the cloud disappears
+
+  Scenario: Going back to the page of the show when seats selected but not added to the cart
+    Given the page 'Seat Selection' is opened
+    When I select the available seat on the scheme by clicking on it
+    Then the color of the seat becomes red
+    And for other users the color of the seat becomes light grey
+    And the button 'Add to cart' becomes active
+    When I click the button 'Back to the page of the show'
+    Then the popup with the message is displayed asking me do I really want to leave this page without adding selected items to a cart 
+    When I click 'YES'
+    Then the page of the show opens
+    And the cart disappears
+    When I click the button 'Book tickets online' in the schedule of forthcoming performances of this play
+    Then the page 'Seat Selection' opens
+    And the cart is empty
