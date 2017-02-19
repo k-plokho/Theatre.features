@@ -25,6 +25,7 @@ Feature: The limited total amount of items in one order
     And the button 'Add' is inactive
     When I click on the button 'Add'
     Then the message concerning necessity of selection at least 1 seat is displayed
+    
   Scenario: Adding 10 items to cart
     Given the page 'Seat Selection' is opened
     When I select 9 available seats on the scheme by clicking on them
