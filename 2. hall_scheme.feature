@@ -54,3 +54,15 @@ Feature: Hall scheme
     When I click the button 'Book tickets online' in the schedule of forthcoming performances of this play
     Then the page 'Seat Selection' opens
     And the cart is empty
+
+  Scenario: Refusing to go back to the page of the show when seats selected but not added to the cart
+    Given the page 'Seat Selection' is opened
+    When I select the available seat on the scheme by clicking on it
+    Then the color of the seat becomes red
+    And for other users the color of the seat becomes light grey
+    And the button 'Add to cart' becomes active
+    When I click the button 'Back to the page of the show'
+    Then the popup with the message is displayed asking me do I really want to leave this page without adding selected items to a cart 
+    When I click 'NO'
+    Then the page 'Seat Selection' is still opened
+    And the seats I selected are still selected
