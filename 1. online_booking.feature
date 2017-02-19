@@ -9,11 +9,11 @@ Feature: Online booking
       Then the page 'Tickets' opens
       When I click here on the button 'Buy tickets online'
       Then the page 'Playbill' opens
-      When I choose the performance by clicking on it in the calendar
+      When I select the performance by clicking on it in the calendar
       Then the page of this show opens
       When I click the button 'Book tickets online' in the schedule of forthcoming performances of this play
       Then the page 'Seat Selection' opens
-      When I choose the available seat by clicking on it
+      When I select the available seat by clicking on it
       Then the color of the seat becomes red
       And for other users the color of the seat becomes light grey
       When I click the button 'Add to cart'
