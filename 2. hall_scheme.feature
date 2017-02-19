@@ -29,3 +29,13 @@ Feature: Hall scheme
     When there's no activity from me on the page for 3 minutes
     Then the seat changes to its previous color for all the users
     And the button 'Add to cart' becomes inactive     
+
+  Scenario: Hovering the mouse over the seats
+    Given the page 'Seat Selection' is opened
+    When I hover the mouse over the particular seat
+    Then the cloud that contains info about this seat (№ row, № seat, the price) appears next to it
+    When I hover the mouse over another seat
+    Then the cloud that contains info about that seat appears
+    And the previous cloud disappears
+    When I move the mouse out of hall scheme zone
+    Then the cloud disappears
