@@ -1,7 +1,7 @@
 Feature: Timer in the cart
   In order to protect the system of misuse, to give the user limited precise time for managing the order
   As a ticket seller
-  I want the timer in the cart for 15 minutes
+  I want the timer 15 minutes
   
   Scenario: Starting the timer
     Given the page 'Seat Selection' is opened
