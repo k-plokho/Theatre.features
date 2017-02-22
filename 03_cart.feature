@@ -56,7 +56,7 @@ Feature: The cart
     And the total sum to pay for the order is 230 hrn
     When I click on button 'Cancel' 
     Then the popup with the message is displayed asking me do I really want to cancel the order
-    When I click 'YES
+    When I click 'YES'
     Then the items disappear from the cart
     And the total sum to pay for the order becomes 0 hrn
     And the corresponding seats on the scheme becomes available to select
